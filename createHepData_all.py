@@ -91,11 +91,11 @@ def makeHcalTowerEffTable():
 
 def makeHcalLLPflaggedJetEffTable():
     table = Table("L1T efficiency of LLP-flagged jets vs L1 jet ET [GeV]")
-    table.description = "The L1T efficiency of the LLP jet trigger in 2023 HCAL timing-scan data: The HCAL LLP-flagged L1T trigger delayed jet fraction versus jet "\
-        "$E_T$ during the 2023 HCAL phase scan demonstrates that the delayed jet fraction approaches unity as the timing shift, with units in ns, is increased. The figure "\
-        "shows results inclusive in pseudorapidity for the HCAL barrel, corresponding to $|{\\eta}| < 1.35$. The fraction of LLP-flagged L1 jets is compared to all L1 jets "\
-        "from a data set of events enriched with jets or $p_T^{\\text{miss}}$. No explicit selection criterion is applied on the jet ET, though the implicit requirement for a jet to "\
-        "have at least two cells with $E_T > 4$ GeV shapes the resulting jet turn-on curve."
+    table.description = "The L1T efficiency of the LLP jet trigger in 2023 HCAL timing-scan data. The HCAL LLP-flagged L1T trigger delayed jet fraction versus jet "\
+        "$E_T$ during the 2023 HCAL phase scan demonstrates that the delayed jet fraction approaches unity as the timing shift increases. "\
+        "The results are inclusive in pseudorapidity for the HCAL barrel, corresponding to $|{\\eta}| < 1.35$. The fraction of LLP-flagged L1 jets is compared to all L1 jets "\
+        "from a data set of events enriched with jets or $p_T^{\\text{miss}}$. No explicit selection criterion is applied on the jet $E_T$, though the implicit requirement for a jet to "\
+        "have at least two cells with $E_T > 4$ GeV shapes the resulting jet trigger efficiency curve."
     image = "data_Gillian/Jet_Et_all_delay_nopreliminary.pdf"
     reader = RootFileReader("data_Gillian/Jet_Et_all_delay.root")
     # Tefficiencies from the ROOT file
@@ -140,30 +140,37 @@ def makeHcalL1JetHTEffTable(xvar):
         image = "data_Gillian/Plotefficiency_eventHT_log_HLT_v3_MC_eventHT_L1effs_noprelim.pdf"
         location = "left"
         reader = RootFileReader("data_Gillian/Figures_Plotefficiency_eventHT_log_HLT_v3_MC_eventHT_L1effs.root")
-    if xvar == "jet": 
+    elif xvar == "jet": 
         name = "jet $p_T$"
         image = "data_Gillian/Plotefficiency_perJet_Pt_log_HLT_v3_MC_L1effs_noprelim.pdf"
         location = "right"
         reader = RootFileReader("data_Gillian/Figures_Plotefficiency_perJet_Pt_log_HLT_v3_MC_L1effs.root")
     table = Table("L1T efficiency of HCAL based-LLP triggers vs. " + name)
-    table.description = "The L1T efficiency of the HCAL-based LLP jet triggers, as a function of event $H_T$ (left) and jet $p_T$ (right), for $H \\to SS \\to "\
-        "b\\bar{b}b\\bar{b}$ events with $m_{H}=350$ GeV, $m_{S}=80$ GeV, and $c\\tau_{S}=0.5$ m (light blue circles) and $m_{H}=125$ GeV, $m_{S}=50$ GeV, and "\
-        "$c\\tau_{S}=3$ m (purple triangles), for 2023 conditions. The trigger efficiency is evaluated for LLPs decaying in HB depths 3 or 4, corresponding to "\
-        "$214.2< R<295$ cm and $|{\\eta}|< 1.26$. These LLPs are also required to be matched to an offline jet in HB."
+
     # Tefficiencies from the ROOT file
     if xvar == "HT": 
         LLP350 = "Plotefficiency_eventHT_log_HLT_v3_MC_eventHT_L1effs_350;1"
         LLP125 = "Plotefficiency_eventHT_log_HLT_v3_MC_eventHT_L1effs_125;1"
-    if xvar == "jet": 
+        table.description = "The L1T efficiency of the HCAL-based LLP jet triggers, as a function of event $H_T$, for $H \\to SS \\to "\
+        "b\\bar{b}b\\bar{b}$ events with $m_{H}=350$ GeV, $m_{S}=80$ GeV, and $c\\tau_{S}=0.5$ m (light blue circles) and $m_{H}=125$ GeV, $m_{S}=50$ GeV, and "\
+        "$c\\tau_{S}=3$ m (purple triangles), for 2023 conditions. The trigger efficiency is evaluated for LLPs decaying in HB depths 3 or 4, corresponding to "\
+        "$214.2< R<295$ cm and $|{\\eta}|< 1.26$. These LLPs are also required to be matched to an offline jet in HB."
+
+    elif xvar == "jet": 
         LLP350 = "Plotefficiency_perJet_Pt_log_HLT_v3_MC_L1effs_350;1"
         LLP125 = "Plotefficiency_perJet_Pt_log_HLT_v3_MC_L1effs_125;1"
+        table.description = "The L1T efficiency of the HCAL-based LLP jet triggers, as a function of jet $p_T$, for $H \\to SS \\to "\
+        "b\\bar{b}b\\bar{b}$ events with $m_{H}=350$ GeV, $m_{S}=80$ GeV, and $c\\tau_{S}=0.5$ m (light blue circles) and $m_{H}=125$ GeV, $m_{S}=50$ GeV, and "\
+        "$c\\tau_{S}=3$ m (purple triangles), for 2023 conditions. The trigger efficiency is evaluated for LLPs decaying in HB depths 3 or 4, corresponding to "\
+        "$214.2< R<295$ cm and $|{\\eta}|< 1.26$. These LLPs are also required to be matched to an offline jet in HB."
+
     table.location = "Data from Fig. 23 " + location
     table.add_image(image)
     plot_LLP350 = reader.read_teff(LLP350)
     plot_LLP125 = reader.read_teff(LLP125)
 
     if xvar == "jet": xAxisVar = Variable("Jet $pT$", is_independent=True, is_binned=False, units="GeV")
-    if xvar == "HT": xAxisVar = Variable("$Event HT$", is_independent=True, is_binned=False, units="GeV")
+    elif xvar == "HT": xAxisVar = Variable("$Event HT$", is_independent=True, is_binned=False, units="GeV")
     xAxisVar.values = plot_LLP350["x"]
     table.add_variable(xAxisVar)
 
@@ -329,8 +336,8 @@ def makeDelayedDiPhotonDataRateTable():
     table = Table("Delayed Di-Photon HLT rate. with intergated luminosity")
 
     reader = RootFileReader("data_DelayedDiPhoton_SahasransuAR/ratewintlumi.root")
-    table.description = "The HLT rate of the delayed-diphoton trigger for a few representative runs in the first data collected in 2023, "\
-        "corresponding to an integrated luminosity of $\\mathrm{4.2\\ fb^{-1}}$, compared with the PU during the same data-taking period , "\
+    table.description = "The HLT rate (blue points) of the delayed-diphoton trigger for a few representative runs in the first data collected in 2023, "\
+        "corresponding to an integrated luminosity of $\\mathrm{4.2\\ fb^{-1}}$, compared with the PU during the same data-taking period (red points), "\
         "as a function of integrated luminosity. The rate decreases nonlinearly during a single fill as a result of the increasing crystal "\
         "opacity. It recovers by the start of the next fill with $\\mathrm{<\\ 1\\%}$ reduction in rate between the fills. The rate generally "\
         "increased throughout the year because of periodic online calibrations to mitigate the loss in trigger efficiency, which was produced "\
@@ -479,15 +486,15 @@ def get_figure_metadata(figure_name):
     """
     metadata = {
         "Figure41a": {
-            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data, 2023 data, and simulation as a function of min($p_T$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. Efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
+            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data (black), 2023 data (red), and simulation (green) as a function of min($p_T$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. The efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
             "location": "Data from Figure 41 (upper left)."
         },
         "Figure41b": {
-            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data, 2023 data, and simulation as a function of max($p_T$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. Efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
+            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data (black), 2023 data (red), and simulation (green) as a function of max($p_T$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. Efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
             "location": "Data from Figure 41 (upper right)."
         },
         "Figure41c": {
-            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data, 2023 data, and simulation as a function of min($d_0$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. Efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
+            "description": "The L1T+HLT efficiency of the Run 3 (2022, L3) triggers in 2022 data (black), 2023 data (red), and simulation (green) as a function of min($d_0$) of the two muons forming TMS-TMS dimuons in events enriched in J/ψ → μμ events. Efficiency in data is the fraction of J/ψ → μμ events recorded by the triggers based on the information from jets and $p_T^{miss}$ that also satisfy the requirements of the Run 3 (2022, L3) triggers. It is compared to the efficiency of the Run 3 (2022, L3) triggers in a combination of simulated samples of J/ψ → μμ events produced in various b hadron decays. The lower panels show the ratio of the data to simulated events.",
             "location": "Data from Figure 41 (lower)."
         },
         "Figure42a": {
