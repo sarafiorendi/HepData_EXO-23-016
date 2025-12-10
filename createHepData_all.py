@@ -220,17 +220,14 @@ def makeHcalL1DecayREffTable():
     return table
 
 def makeCalRatioJetEffTable():
-    table = Table("HLT efficiency of CalRatio trigger vs. leading jet neutral hadron energy fraction")
+    table = Table("HLT efficiency of CalRatio trigger vs. leading jet NHEF")
     table.description = "The HLT efficiency of the CalRatio trigger as a function of the leading PF jet NHEF in 2024 data, measured with respect to a logical " \
-        "OR of the HCAL-based LLP L1 jet triggers (\cmsLeft). Distribution of the leading PF jet NHEF (\cmsRight) in 2024 data (black circles), \WtoLNu " \
-        "background simulation for 2024 conditions (red squares), and $\PH \to \PS\PS \to \bbbar\bbbar$ signal simulation for 2023 conditions (blue and purple " \
-        "triangles). Events are required to have $\HT > 200\GeV$ and the leading jet is required to have $\pt > 60\GeV$ and $\abs{\eta} < 1.5$, which are " \
+        "OR of the HCAL-based LLP L1 jet triggers (left). Events are required to have $H_{\mathrm{T}} > 200 \\,\mathrm{GeV}$ and the leading jet is required to have $p_{\mathrm{T}} > 60 \\,\mathrm{GeV}$ and $|\eta| < 1.5$, which are " \
         "equivalent to the respective HLT jet object selections. The signal distributions additionally require the leading jet to be matched to an LLP decaying " \
-        "anywhere inside the barrel calorimeter volume ($129 < R < 295\cm$). The clear separation between the displaced signal and the prompt background " \
-        "in the \cmsRight plot motivates the development of the CalRatio trigger."
+        "anywhere inside the barrel calorimeter volume ($129 < R < 295 \\,\mathrm{cm}$)."
     image = "data_Kiley/calratio_efficiency.pdf"
     table.add_image(image)
-    table.location = "Data from Fig. 25"
+    table.location = "Data from Fig. 25 left"
 
     # Tefficiencies from the ROOT file
     reader = RootFileReader("data_Kiley/calratio_efficiency.root")
@@ -245,16 +242,16 @@ def makeCalRatioJetEffTable():
     return table
 
 def makeCalRatioJetDistributionTable():
-    table = Table("Distribution of leading jet neutral hadron energy fraction in data, background W+Jets MC, and displaced signal")
-    table.description = "The HLT efficiency of the CalRatio trigger as a function of the leading PF jet NHEF in 2024 data, measured with respect to a logical " \
-        "OR of the HCAL-based LLP L1 jet triggers (\cmsLeft). Distribution of the leading PF jet NHEF (\cmsRight) in 2024 data (black circles), \WtoLNu " \
-        "background simulation for 2024 conditions (red squares), and $\PH \to \PS\PS \to \bbbar\bbbar$ signal simulation for 2023 conditions (blue and purple " \
-        "triangles). Events are required to have $\HT > 200\GeV$ and the leading jet is required to have $\pt > 60\GeV$ and $\abs{\eta} < 1.5$, which are " \
+    table = Table("Distribution of leading jet neutral hadron energy fraction")
+    table.description = "Distribution of the leading PF jet NHEF (right) in 2024 data (black circles), W$\\to l\\nu$ " \
+        "background simulation for 2024 conditions (red squares), and $H \\to SS \\to b\\bar{b}b\\bar{b}$ signal simulation for 2023 conditions (blue and purple " \
+        "triangles). Events are required to have $H_{\mathrm{T}} > 200\\,\mathrm{GeV}$ and the leading jet is required to have $p_{\mathrm{T}} > 60\\,\mathrm{GeV}$ and $|\eta| < 1.5$, which are " \
         "equivalent to the respective HLT jet object selections. The signal distributions additionally require the leading jet to be matched to an LLP decaying " \
-        "anywhere inside the barrel calorimeter volume ($129 < R < 295\cm$). The clear separation between the displaced signal and the prompt background " \
-        "in the \cmsRight plot motivates the development of the CalRatio trigger."
+        "anywhere inside the barrel calorimeter volume ($129 < R < 295\\,\mathrm{cm}$). The clear separation between the displaced signal and the prompt background " \
+        "in the plot motivates the development of the CalRatio trigger."
     image = "data_Kiley/calratio_distribution.pdf"
     table.add_image(image)
+    table.location = "Data from Fig. 25 right"
 
     # THists from the ROOT file
     reader = RootFileReader("data_Kiley/calratio_distribution.root")
@@ -268,9 +265,9 @@ def makeCalRatioJetDistributionTable():
     table.add_variable(xAxisVar)
 
     table.add_variable(makeVariable(plot=data, label="Data", is_independent=False, is_binned=False, is_symmetric=True, units=""))
-    table.add_variable(makeVariable(plot=bkg, label="W #rightarrow l#nu+jets", is_independent=False, is_binned=False, is_symmetric=True, units=""))
-    table.add_variable(makeVariable(plot=sig350, label="H #rightarrow SS #rightarrow 4b (350 GeV, 80 GeV, 0.5 m)", is_independent=False, is_binned=False, is_symmetric=True, units=""))
-    table.add_variable(makeVariable(plot=sig125, label="H #rightarrow SS #rightarrow 4b (125 GeV, 50 GeV, 3 m)", is_independent=False, is_binned=False, is_symmetric=True, units=""))
+    table.add_variable(makeVariable(plot=bkg, label="$\mathrm{W} \\to l\\nu+\mathrm{jets}$", is_independent=False, is_binned=False, is_symmetric=True, units=""))
+    table.add_variable(makeVariable(plot=sig350, label="$\mathrm{H} \\to \mathrm{SS} \\to 4\mathrm{b}$ (350 GeV, 80 GeV, 0.5 m)", is_independent=False, is_binned=False, is_symmetric=True, units=""))
+    table.add_variable(makeVariable(plot=sig125, label="$\mathrm{H} \\to \mathrm{SS} \\to 4\mathrm{b}$ (125 GeV, 50 GeV, 3 m)", is_independent=False, is_binned=False, is_symmetric=True, units=""))
 
     return table
 
@@ -1701,6 +1698,10 @@ def main():
 
     # Figure 24
     submission.add_table(makeHcalL1DecayREffTable())
+
+    # Figure 25
+    submission.add_table(makeCalRatioJetEffTable())
+    submission.add_table(makeCalRatioJetDistributionTable())
 
     # Figure 27
     submission.add_table(makeDelayedJetEfficiencyTable())
