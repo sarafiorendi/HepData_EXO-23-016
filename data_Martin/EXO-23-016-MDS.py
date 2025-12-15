@@ -45,7 +45,7 @@ def plot_fig56l(h_met):
     
     ax.set_ylabel("HLT Efficiency")
     ax.set_xlabel(r"$p_T^{~\text{ miss}}[GeV]$")    
-    ax.text(0.6, 0.12, 'Cluster Size > 50', transform=ax.transAxes,fontsize="small")
+    ax.text(0.6, 0.12, r"$N_{\text{hits}}$ > 50", transform=ax.transAxes,fontsize="small")
     
     ax.legend(["DT MDS"]
               ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=%s~$GeV, $m_S=%s~$GeV, $c\tau=%s~$m"%(mH,mS,ctau)
@@ -63,6 +63,7 @@ def plot_fig56r(h_cls):
                        error_opts={"linestyle":'none','lw':3})
     
     ax.set_ylabel("HLT Efficiency")
+    ax.set_xlabel(r"$N_{\text{hits}}$")
     ax.legend(["DT MDS"],
               title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=125~$GeV, $m_S=40~$GeV, $c\tau=1~$m",title_fontsize="small",
              loc=7)
