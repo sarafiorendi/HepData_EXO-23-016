@@ -4,7 +4,7 @@
 void HLT_HTg430_Delayedjet2nsthreshold_efficiency()
 {
 //=========Macro generated from canvas: FigExample_800-600_3-out/FigExample_800-600_3-out
-//=========  (Mon Nov 24 22:13:36 2025) by ROOT version 6.26/11
+//=========  (Wed Dec 17 00:08:15 2025) by ROOT version 6.26/11
    TCanvas *FigExample_800-600_3-out = new TCanvas("FigExample_800-600_3-out", "FigExample_800-600_3-out",0,0,800,600);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
@@ -61,7 +61,7 @@ void HLT_HTg430_Delayedjet2nsthreshold_efficiency()
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->SetFillColor(19);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->SetLineWidth(2);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->SetMarkerStyle(20);
-   den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->SetMarkerSize(1.5);
+   den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->SetMarkerSize(2);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone1->Draw("ap e0 same");
    Double_t xAxis2[11] = {0, 0.25, 0.5, 1, 1.5, 2, 2.5, 3, 4, 6, 12}; 
    
@@ -103,7 +103,7 @@ void HLT_HTg430_Delayedjet2nsthreshold_efficiency()
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->SetLineWidth(2);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->SetMarkerColor(2);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->SetMarkerStyle(22);
-   den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->SetMarkerSize(2);
+   den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->SetMarkerSize(2.5);
    den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone2->Draw("p e0 same");
    TLatex *   tex = new TLatex(0.25,1.1,"HLT selection: H_{T} > 430 GeV, #geq 1 jet with p_{T} > 40 GeV and t > 2 ns");
    tex->SetTextAlign(12);
@@ -126,7 +126,7 @@ void HLT_HTg430_Delayedjet2nsthreshold_efficiency()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(1.5);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(62);
    entry=leg->AddEntry("den_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive_v3_clone","#bf{2022}","PL E0");
    entry->SetLineColor(2);
@@ -134,7 +134,7 @@ void HLT_HTg430_Delayedjet2nsthreshold_efficiency()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(22);
-   entry->SetMarkerSize(2);
+   entry->SetMarkerSize(2.5);
    entry->SetTextFont(62);
    leg->Draw();
       tex = new TLatex(0.96,0.936," 27.2 fb^{-1} (2023) +  3.1 fb^{-1} (2022) (13.6 TeV)");
