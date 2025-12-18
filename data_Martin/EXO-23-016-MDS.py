@@ -52,7 +52,7 @@ def plot_fig56l(h_met):
               ,title_fontsize="small",
              loc=7)
     ax.set_ylim(0,1.2)
-    hep.cms.label(ax=ax,com=13.6)
+    hep.cms.label(ax=ax,com=13.6,loc=1)
     fig.savefig("./plots/MDS_DT_eff_v_MET.pdf")
 
 def plot_fig56r(h_cls):
@@ -70,7 +70,7 @@ def plot_fig56r(h_cls):
     ax.text(0.6, 0.12, r"$p_T^{~\text{ miss}}>250~GeV$", transform=ax.transAxes,fontsize="small")
     ax.set_ylim(0,1.2)
     ax.set_xlim(0,None)
-    hep.cms.label(ax=ax,com=13.6)
+    hep.cms.label(ax=ax,com=13.6,loc=1)
     fig.savefig("./plots/MDS_DT_eff_v_cls.pdf")   
 
 
@@ -104,41 +104,49 @@ def plot_fig60l(results, mH, mS, ax):
 
     ## Run 2
     data = np.array(sorted([[ctau/1000,v["MET200_csc"]/v['denom_csc']] for (mass,ctau),v in results.items() if v['denom_csc']>0 and mass==mS],key=lambda x: x[0]))
-    ax.plot(data[:,0],data[:,1],label=r"Run 2 - $p_T^{\mathrm{miss}}>200$ GeV",lw=3, marker='o',ms=10)
+    ax.plot(data[:,0],data[:,1],label=r"Run 2 - $p_T^{\mathrm{miss}}>200$ GeV",lw=3, marker='o',ms=14)
 
     # L1 block:
     data = np.array(sorted([[ctau/1000,v["HMTnominal_csc"]/v['denom_csc']] for (mass,ctau),v in results.items() if v['denom_csc']>0 and mass==mS],key=lambda x: x[0]))
-    ax.plot(data[:,0],data[:,1],label="Run 3 - L1T (CSC MDS)",lw=3, marker='s',ms=10)
+    ax.plot(data[:,0],data[:,1],label="Run 3 - L1T (CSC MDS)",lw=3, marker='s',ms=14)
 
     data = np.array(sorted([[ctau/1000,v["CscLoose_csc"]/v['denom_csc']] for (mass,ctau),v in results.items() if v['denom_csc']>0 and mass==mS],key=lambda x: x[0]))
-    ax.plot(data[:,0],data[:,1],label="Run 3 - L1T+HLT (CSC MDS)",lw=3, marker='^',ms=10)
+    ax.plot(data[:,0],data[:,1],label="Run 3 - L1T+HLT (CSC MDS)",lw=3, marker='^',ms=14)
     
-    ax.legend(title=sample,title_fontsize="small",loc=2,fontsize="medium")
+    ax.legend(title=sample,title_fontsize="small",loc=1,fontsize="medium",alignment="right")
     ax.set_xlabel(r"LLP $c\tau$ [m]")
     ax.set_xscale("log")    
     ax.tick_params(axis='both', which='major', labelsize=24)    
     ax.set_ylim(0,0.5)
     ax.set_ylabel("Acceptance")
-    hep.cms.label(ax=ax,com=13.6)
+    hep.cms.label(ax=ax,com=13.6,loc=1)
     return ax
 
 def plot_fig60r(results,mH,mS,ax):
     sample = r"$H\rightarrow SS\rightarrow 4b$"+"\n"+"$(m_H,m_S)$=(%s,%s) GeV"%(mH,mS)
     
     data = np.array(sorted([[ctau/1000,v["MET200_dt"]/v['denom_dt']] for (mass,ctau),v in results.items() if v['denom_dt']>100 and mass==mS],key=lambda x: x[0]))
-    ax.plot(data[:,0],data[:,1],label=r"Run 2 - $p_T^{\mathrm{miss}}>200$ GeV",lw=3,marker="o",ms=10)
+    ax.plot(data[:,0],data[:,1],label=r"Run 2 - $p_T^{\mathrm{miss}}>200$ GeV",lw=3,marker="o",ms=14)
     
 
     data = np.array(sorted([[ctau/1000,v["METDT_dt"]/v['denom_dt']] for (mass,ctau),v in results.items() if v['denom_dt']>100 and mass==mS],key=lambda x: x[0]))
     ax.plot(data[:,0],data[:,1],label="Run 3 - L1T+HLT (DT MDS)",lw=3,marker="^",ms=10,color="r")
     
-    ax.legend(title=sample,title_fontsize="small",fontsize="medium")
+    #ax.legend(title=sample,title_fontsize="small",fontsize="medium")
+    ax.legend(
+        title=sample,
+        title_fontsize="small",
+        fontsize="medium",
+        loc="upper center",
+        bbox_to_anchor=(0.6, 0.88)
+    )
     ax.set_xlabel(r"LLP $c\tau$ [m]")
     ax.tick_params(axis='both', which='major', labelsize=24)        
     ax.set_xscale("log")
 
     ax.set_ylabel("Acceptance")
-    hep.cms.label(ax=ax,com=13.6)
+    ax.set_ylim(0,0.38)    
+    hep.cms.label(ax=ax,com=13.6,loc=1)
 
 
 # In[57]:
@@ -227,48 +235,45 @@ def drawDTr(ax,text_loc=0.7):
 def plot_fig61(ax,hz,drawCSC=False,mH=125,mS=40,ctau=1):
     hist.plotratio(num=hz.integrate("sample",'numer_l1'),
                     denom=hz.integrate("sample",'denom'),xerr=True,
-                    error_opts={"linestyle":'none',"lw":2,"marker":"o"},ax=ax
+                    error_opts={"linestyle":'none',"lw":2,"marker":"o","ms":8},ax=ax
                       )
     hist.plotratio(num=hz.integrate("sample",'numer'),
                     denom=hz.integrate("sample",'denom'),xerr=True,
-                    error_opts={"linestyle":'none',"lw":2,'marker':"s"},ax=ax,clear=False
+                    error_opts={"linestyle":'none',"lw":2,'marker':"s",'ms':8},ax=ax,clear=False
                       )    
     ax.set_ylabel("Acceptance")
     ax.legend(["L1T","L1T+HLT"]
-              ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=%s~$GeV, $m_S=%s~$GeV, $c\tau=%s~$m"%(mH,mS,ctau),title_fontsize='x-small'
-             ,loc=2,alignment="left")
+              ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=%s~$GeV, $m_S=%s~$GeV"%(mH,mS)+"\n"+ r"$c\tau=%s~$m"%(ctau),title_fontsize='x-small'  
+             ,loc=2,alignment="left",bbox_to_anchor=(0.02, 0.9))
     
     if drawCSC:
         ax=drawCSCz(ax)
     ax.set_ylim(0,1)
     ax.set_xlim(0,1100)
-    ax.grid() 
-    hep.cms.label(ax=ax,com=13.6)
+    hep.cms.label(ax=ax,com=13.6,loc=1)
     return ax
 
 def plot_fig62(ax,hr,drawMS=False,mH=125,mS=40,ctau=1):
     hist.plotratio(num=hr.integrate("sample",'numer_dt_L1MET_tight'),
                     denom=hr.integrate("sample",'denom_dt_L1MET'),xerr=True,
-                    error_opts={"linestyle":'none',"lw":2,"marker":"o"},ax=ax
+                    error_opts={"linestyle":'none',"lw":2,"marker":"o",'ms':8},ax=ax
                       )
     hist.plotratio(num=hr.integrate("sample",'numer_dt_L1MET_tight'),
                     denom=hr.integrate("sample",'denom'),xerr=True,
-                    error_opts={"linestyle":'none',"lw":2,"marker":"s"},ax=ax,clear=False
+                    error_opts={"linestyle":'none',"lw":2,"marker":"s",'ms':8},ax=ax,clear=False
                       )    
     ax.set_ylabel("Acceptance")
     ax.legend(
             # ["HLT acceptance(passL1MET)","HLT acceptance(all gen)"]
             ["HLT","L1T+HLT"]        
-              # ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=125~$GeV, $m_S=40~$GeV, $c\tau=1~$m",title_fontsize='x-small'
-              ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=%s~$GeV, $m_S=%s~$GeV, $c\tau=%s~$m"%(mH,mS,ctau),title_fontsize='x-small'              
-             ,loc=2,alignment="left")
+              ,title=r"$H\rightarrow SS \rightarrow 4b$"+"\n"+ r"$m_H=%s~$GeV, $m_S=%s~$GeV"%(mH,mS)+"\n"+ r"$c\tau=%s~$m"%(ctau),title_fontsize='x-small'  
+             ,loc=2,alignment="left",bbox_to_anchor=(0.02, 0.9))
     
     if drawMS:
         ax=drawDTr(ax)
-    ax.set_ylim(0,1.2)
+    ax.set_ylim(0,1)
     ax.set_xlim(0,900)
-    ax.grid() 
-    hep.cms.label(ax=ax,com=13.6)
+    hep.cms.label(ax=ax,com=13.6,loc=1)
     return ax
 
 
