@@ -4,8 +4,8 @@
 void overlay_acceptance_350_80_CTau-1000mm()
 {
 //=========Macro generated from canvas: c/
-//=========  (Mon Nov 24 15:32:16 2025) by ROOT version 6.26/11
-   TCanvas *c = new TCanvas("c", "",0,0,800,800);
+//=========  (Wed Dec 17 14:42:13 2025) by ROOT version 6.26/11
+   TCanvas *c = new TCanvas("c", "",1,1,800,776);
    gStyle->SetOptStat(0);
    c->Range(-100,-0.1625,900,1.4625);
    c->SetFillColor(0);
@@ -16,28 +16,28 @@ void overlay_acceptance_350_80_CTau-1000mm()
    c->SetFrameBorderMode(0);
    c->SetFrameBorderMode(0);
    
-   TH1D *frame__2 = new TH1D("frame__2","",100,0,1000);
-   frame__2->SetMinimum(0);
-   frame__2->SetMaximum(1.3);
-   frame__2->SetDirectory(0);
-   frame__2->SetStats(0);
+   TH1D *frame__4 = new TH1D("frame__4","",100,0,1000);
+   frame__4->SetMinimum(0);
+   frame__4->SetMaximum(1.3);
+   frame__4->SetDirectory(0);
+   frame__4->SetStats(0);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
    ci = TColor::GetColor("#000099");
-   frame__2->SetLineColor(ci);
-   frame__2->GetXaxis()->SetTitle("LLP decay R [cm]");
-   frame__2->GetXaxis()->SetRange(1,80);
-   frame__2->GetXaxis()->SetLabelFont(42);
-   frame__2->GetXaxis()->SetTitleOffset(1);
-   frame__2->GetXaxis()->SetTitleFont(42);
-   frame__2->GetYaxis()->SetTitle("L1T+HLT acceptance");
-   frame__2->GetYaxis()->SetLabelFont(42);
-   frame__2->GetYaxis()->SetTitleFont(42);
-   frame__2->GetZaxis()->SetLabelFont(42);
-   frame__2->GetZaxis()->SetTitleOffset(1);
-   frame__2->GetZaxis()->SetTitleFont(42);
-   frame__2->Draw("");
+   frame__4->SetLineColor(ci);
+   frame__4->GetXaxis()->SetTitle("LLP decay R [cm]");
+   frame__4->GetXaxis()->SetRange(1,80);
+   frame__4->GetXaxis()->SetLabelFont(42);
+   frame__4->GetXaxis()->SetTitleOffset(1);
+   frame__4->GetXaxis()->SetTitleFont(42);
+   frame__4->GetYaxis()->SetTitle("L1T+HLT acceptance");
+   frame__4->GetYaxis()->SetLabelFont(42);
+   frame__4->GetYaxis()->SetTitleFont(42);
+   frame__4->GetZaxis()->SetLabelFont(42);
+   frame__4->GetZaxis()->SetTitleOffset(1);
+   frame__4->GetZaxis()->SetTitleFont(42);
+   frame__4->Draw("");
    TBox *box = new TBox(0,0,110,1);
 
    ci = 1183;
@@ -48,7 +48,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    TLatex *   tex = new TLatex(100,0.75,"Tracker");
    tex->SetTextAlign(22);
 
-   ci = TColor::GetColor("#339999");
+   ci = TColor::GetColor("#33cccc");
    tex->SetTextColor(ci);
    tex->SetTextSize(0.025);
    tex->SetTextAngle(90);
@@ -103,7 +103,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    tex->SetLineWidth(2);
    tex->Draw();
    
-   Double_t _fx3006[13] = {
+   Double_t _fx3016[13] = {
    5,
    15,
    25,
@@ -117,7 +117,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    110,
    130,
    150};
-   Double_t _fy3006[13] = {
+   Double_t _fy3016[13] = {
    0.04166667,
    0.04241071,
    0.05249257,
@@ -131,7 +131,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.07575277,
    0.08001448,
    0.0731548};
-   Double_t _felx3006[13] = {
+   Double_t _felx3016[13] = {
    5,
    5,
    5,
@@ -145,7 +145,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    10,
    10};
-   Double_t _fely3006[13] = {
+   Double_t _fely3016[13] = {
    0.003420703,
    0.00360925,
    0.00406707,
@@ -159,7 +159,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.004733684,
    0.005189871,
    0.00669455};
-   Double_t _fehx3006[13] = {
+   Double_t _fehx3016[13] = {
    5,
    5,
    5,
@@ -173,7 +173,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    10,
    10};
-   Double_t _fehy3006[13] = {
+   Double_t _fehy3016[13] = {
    0.003699408,
    0.003914228,
    0.004374804,
@@ -187,7 +187,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.005011859,
    0.005504861,
    0.007279814};
-   TGraphAsymmErrors *grae = new TGraphAsymmErrors(13,_fx3006,_fy3006,_felx3006,_fehx3006,_fely3006,_fehy3006);
+   TGraphAsymmErrors *grae = new TGraphAsymmErrors(13,_fx3016,_fy3016,_felx3016,_fehx3016,_fely3016,_fehy3016);
    grae->SetName("");
    grae->SetTitle("");
    grae->SetFillStyle(1000);
@@ -199,29 +199,29 @@ void overlay_acceptance_350_80_CTau-1000mm()
    ci = TColor::GetColor("#ff0000");
    grae->SetMarkerColor(ci);
    grae->SetMarkerStyle(20);
-   grae->SetMarkerSize(0.8);
+   grae->SetMarkerSize(1.5);
    
-   TH1F *Graph_Graph3006 = new TH1F("Graph_Graph3006","",100,0,176);
-   Graph_Graph3006->SetMinimum(0.03332422);
-   Graph_Graph3006->SetMaximum(0.09238513);
-   Graph_Graph3006->SetDirectory(0);
-   Graph_Graph3006->SetStats(0);
+   TH1F *Graph_Graph_Graph30113016 = new TH1F("Graph_Graph_Graph30113016","",100,0,176);
+   Graph_Graph_Graph30113016->SetMinimum(0.03332422);
+   Graph_Graph_Graph30113016->SetMaximum(0.09238513);
+   Graph_Graph_Graph30113016->SetDirectory(0);
+   Graph_Graph_Graph30113016->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3006->SetLineColor(ci);
-   Graph_Graph3006->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3006->GetXaxis()->SetTitleOffset(1);
-   Graph_Graph3006->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3006->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3006->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3006->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3006->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph3006->GetZaxis()->SetTitleFont(42);
-   grae->SetHistogram(Graph_Graph3006);
+   Graph_Graph_Graph30113016->SetLineColor(ci);
+   Graph_Graph_Graph30113016->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30113016->GetXaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30113016->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30113016->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30113016->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30113016->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30113016->GetZaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30113016->GetZaxis()->SetTitleFont(42);
+   grae->SetHistogram(Graph_Graph_Graph30113016);
    
    grae->Draw("pe ");
    
-   Double_t _fx3007[20] = {
+   Double_t _fx3017[20] = {
    5,
    15,
    25,
@@ -242,7 +242,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    250,
    270,
    290};
-   Double_t _fy3007[20] = {
+   Double_t _fy3017[20] = {
    0.05525965,
    0.04639175,
    0.0604311,
@@ -263,7 +263,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.4439764,
    0.3900376,
    0.1097308};
-   Double_t _felx3007[20] = {
+   Double_t _felx3017[20] = {
    5,
    5,
    5,
@@ -284,7 +284,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    10,
    10};
-   Double_t _fely3007[20] = {
+   Double_t _fely3017[20] = {
    0.004184845,
    0.004049321,
    0.00469517,
@@ -305,7 +305,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.0147967,
    0.01531885,
    0.01015504};
-   Double_t _fehx3007[20] = {
+   Double_t _fehx3017[20] = {
    5,
    5,
    5,
@@ -326,7 +326,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    10,
    10};
-   Double_t _fehy3007[20] = {
+   Double_t _fehy3017[20] = {
    0.004492981,
    0.004398824,
    0.005047725,
@@ -347,7 +347,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.01489388,
    0.0155321,
    0.01100486};
-   grae = new TGraphAsymmErrors(20,_fx3007,_fy3007,_felx3007,_fehx3007,_fely3007,_fehy3007);
+   grae = new TGraphAsymmErrors(20,_fx3017,_fy3017,_felx3017,_fehx3017,_fely3017,_fehy3017);
    grae->SetName("");
    grae->SetTitle("");
    grae->SetFillStyle(1000);
@@ -359,29 +359,29 @@ void overlay_acceptance_350_80_CTau-1000mm()
    ci = TColor::GetColor("#0000ff");
    grae->SetMarkerColor(ci);
    grae->SetMarkerStyle(21);
-   grae->SetMarkerSize(0.7);
+   grae->SetMarkerSize(1.5);
    
-   TH1F *Graph_Graph3007 = new TH1F("Graph_Graph3007","",100,0,330);
-   Graph_Graph3007->SetMinimum(0.03549177);
-   Graph_Graph3007->SetMaximum(0.5008138);
-   Graph_Graph3007->SetDirectory(0);
-   Graph_Graph3007->SetStats(0);
+   TH1F *Graph_Graph_Graph30123017 = new TH1F("Graph_Graph_Graph30123017","",100,0,330);
+   Graph_Graph_Graph30123017->SetMinimum(0.03549177);
+   Graph_Graph_Graph30123017->SetMaximum(0.5008138);
+   Graph_Graph_Graph30123017->SetDirectory(0);
+   Graph_Graph_Graph30123017->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3007->SetLineColor(ci);
-   Graph_Graph3007->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3007->GetXaxis()->SetTitleOffset(1);
-   Graph_Graph3007->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3007->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3007->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3007->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3007->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph3007->GetZaxis()->SetTitleFont(42);
-   grae->SetHistogram(Graph_Graph3007);
+   Graph_Graph_Graph30123017->SetLineColor(ci);
+   Graph_Graph_Graph30123017->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30123017->GetXaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30123017->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30123017->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30123017->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30123017->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30123017->GetZaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30123017->GetZaxis()->SetTitleFont(42);
+   grae->SetHistogram(Graph_Graph_Graph30123017);
    
    grae->Draw("pe ");
    
-   Double_t _fx3008[25] = {
+   Double_t _fx3018[25] = {
    210,
    230,
    250,
@@ -407,7 +407,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    737.5,
    762.5,
    787.5};
-   Double_t _fy3008[25] = {
+   Double_t _fy3018[25] = {
    0.09819639,
    0.1120533,
    0.1369681,
@@ -433,7 +433,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.3012048,
    0.1230769,
    0.08823529};
-   Double_t _felx3008[25] = {
+   Double_t _felx3018[25] = {
    10,
    10,
    10,
@@ -459,7 +459,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    12.5,
    12.5,
    12.5};
-   Double_t _fely3008[25] = {
+   Double_t _fely3018[25] = {
    0.006706763,
    0.007826436,
    0.008952021,
@@ -485,7 +485,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.05341025,
    0.04146227,
    0.03445579};
-   Double_t _fehx3008[25] = {
+   Double_t _fehx3018[25] = {
    10,
    10,
    10,
@@ -511,7 +511,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    12.5,
    12.5,
    12.5};
-   Double_t _fehy3008[25] = {
+   Double_t _fehy3018[25] = {
    0.007124755,
    0.008314973,
    0.009453114,
@@ -537,7 +537,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.05873562,
    0.05511346,
    0.04901151};
-   grae = new TGraphAsymmErrors(25,_fx3008,_fy3008,_felx3008,_fehx3008,_fely3008,_fehy3008);
+   grae = new TGraphAsymmErrors(25,_fx3018,_fy3018,_felx3018,_fehx3018,_fely3018,_fehy3018);
    grae->SetName("");
    grae->SetTitle("");
    grae->SetFillStyle(1000);
@@ -549,29 +549,29 @@ void overlay_acceptance_350_80_CTau-1000mm()
    ci = TColor::GetColor("#009900");
    grae->SetMarkerColor(ci);
    grae->SetMarkerStyle(22);
-   grae->SetMarkerSize(0.8);
+   grae->SetMarkerSize(1.5);
    
-   TH1F *Graph_Graph3008 = new TH1F("Graph_Graph3008","",100,140,860);
-   Graph_Graph3008->SetMinimum(0.04840155);
-   Graph_Graph3008->SetMaximum(0.8620178);
-   Graph_Graph3008->SetDirectory(0);
-   Graph_Graph3008->SetStats(0);
+   TH1F *Graph_Graph_Graph30133018 = new TH1F("Graph_Graph_Graph30133018","",100,140,860);
+   Graph_Graph_Graph30133018->SetMinimum(0.04840155);
+   Graph_Graph_Graph30133018->SetMaximum(0.8620178);
+   Graph_Graph_Graph30133018->SetDirectory(0);
+   Graph_Graph_Graph30133018->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3008->SetLineColor(ci);
-   Graph_Graph3008->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3008->GetXaxis()->SetTitleOffset(1);
-   Graph_Graph3008->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3008->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3008->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3008->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3008->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph3008->GetZaxis()->SetTitleFont(42);
-   grae->SetHistogram(Graph_Graph3008);
+   Graph_Graph_Graph30133018->SetLineColor(ci);
+   Graph_Graph_Graph30133018->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30133018->GetXaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30133018->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30133018->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30133018->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30133018->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30133018->GetZaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30133018->GetZaxis()->SetTitleFont(42);
+   grae->SetHistogram(Graph_Graph_Graph30133018);
    
    grae->Draw("pe ");
    
-   Double_t _fx3009[29] = {
+   Double_t _fx3019[29] = {
    75,
    85,
    95,
@@ -601,7 +601,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    637.5,
    662.5,
    687.5};
-   Double_t _fy3009[29] = {
+   Double_t _fy3019[29] = {
    0.08333333,
    0.03614458,
    0,
@@ -631,7 +631,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.3703704,
    0.1956522,
    0.03125};
-   Double_t _felx3009[29] = {
+   Double_t _felx3019[29] = {
    5,
    5,
    5,
@@ -661,7 +661,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    12.5,
    12.5,
    12.5};
-   Double_t _fely3009[29] = {
+   Double_t _fely3019[29] = {
    0.06905547,
    0.01961522,
    0,
@@ -691,7 +691,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.07155205,
    0.06101359,
    0.02587173};
-   Double_t _fehx3009[29] = {
+   Double_t _fehx3019[29] = {
    5,
    5,
    5,
@@ -721,7 +721,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    12.5,
    12.5,
    12.5};
-   Double_t _fehy3009[29] = {
+   Double_t _fehy3019[29] = {
    0.1666031,
    0.0339303,
    0.01474506,
@@ -751,7 +751,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.07696663,
    0.07648384,
    0.068259};
-   grae = new TGraphAsymmErrors(29,_fx3009,_fy3009,_felx3009,_fehx3009,_fely3009,_fehy3009);
+   grae = new TGraphAsymmErrors(29,_fx3019,_fy3019,_felx3019,_fehx3019,_fely3019,_fehy3019);
    grae->SetName("");
    grae->SetTitle("");
    grae->SetFillStyle(1000);
@@ -762,30 +762,30 @@ void overlay_acceptance_350_80_CTau-1000mm()
 
    ci = TColor::GetColor("#ff00ff");
    grae->SetMarkerColor(ci);
-   grae->SetMarkerStyle(33);
-   grae->SetMarkerSize(0.8);
+   grae->SetMarkerStyle(23);
+   grae->SetMarkerSize(1.5);
    
-   TH1F *Graph_Graph3009 = new TH1F("Graph_Graph3009","",100,7,763);
-   Graph_Graph3009->SetMinimum(0);
-   Graph_Graph3009->SetMaximum(0.9492813);
-   Graph_Graph3009->SetDirectory(0);
-   Graph_Graph3009->SetStats(0);
+   TH1F *Graph_Graph_Graph30143019 = new TH1F("Graph_Graph_Graph30143019","",100,7,763);
+   Graph_Graph_Graph30143019->SetMinimum(0);
+   Graph_Graph_Graph30143019->SetMaximum(0.9492813);
+   Graph_Graph_Graph30143019->SetDirectory(0);
+   Graph_Graph_Graph30143019->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3009->SetLineColor(ci);
-   Graph_Graph3009->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3009->GetXaxis()->SetTitleOffset(1);
-   Graph_Graph3009->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3009->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3009->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3009->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3009->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph3009->GetZaxis()->SetTitleFont(42);
-   grae->SetHistogram(Graph_Graph3009);
+   Graph_Graph_Graph30143019->SetLineColor(ci);
+   Graph_Graph_Graph30143019->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30143019->GetXaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30143019->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30143019->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30143019->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30143019->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30143019->GetZaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30143019->GetZaxis()->SetTitleFont(42);
+   grae->SetHistogram(Graph_Graph_Graph30143019);
    
    grae->Draw("pe ");
    
-   Double_t _fx3010[15] = {
+   Double_t _fx3020[15] = {
    5,
    15,
    25,
@@ -801,7 +801,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    150,
    175,
    250};
-   Double_t _fy3010[15] = {
+   Double_t _fy3020[15] = {
    0.301367,
    0.351152,
    0.381049,
@@ -817,7 +817,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.5503933,
    0.4230754,
    0.4068718};
-   Double_t _felx3010[15] = {
+   Double_t _felx3020[15] = {
    5,
    5,
    5,
@@ -833,7 +833,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    25,
    50};
-   Double_t _fely3010[15] = {
+   Double_t _fely3020[15] = {
    0.002653676,
    0.003862486,
    0.005454623,
@@ -849,7 +849,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.06798441,
    0.0687253,
    0.1086904};
-   Double_t _fehx3010[15] = {
+   Double_t _fehx3020[15] = {
    5,
    5,
    5,
@@ -865,7 +865,7 @@ void overlay_acceptance_350_80_CTau-1000mm()
    10,
    25,
    50};
-   Double_t _fehy3010[15] = {
+   Double_t _fehy3020[15] = {
    0.002666941,
    0.003881905,
    0.005484446,
@@ -881,31 +881,37 @@ void overlay_acceptance_350_80_CTau-1000mm()
    0.06633655,
    0.07148989,
    0.1170371};
-   grae = new TGraphAsymmErrors(15,_fx3010,_fy3010,_felx3010,_fehx3010,_fely3010,_fehy3010);
+   grae = new TGraphAsymmErrors(15,_fx3020,_fy3020,_felx3020,_fehx3020,_fely3020,_fehy3020);
    grae->SetName("");
    grae->SetTitle("");
    grae->SetFillStyle(1000);
-   grae->SetLineColor(7);
-   grae->SetMarkerColor(7);
+
+   ci = TColor::GetColor("#33cccc");
+   grae->SetLineColor(ci);
+   grae->SetLineWidth(2);
+
+   ci = TColor::GetColor("#33cccc");
+   grae->SetMarkerColor(ci);
    grae->SetMarkerStyle(33);
+   grae->SetMarkerSize(2.2);
    
-   TH1F *Graph_Graph3010 = new TH1F("Graph_Graph3010","",100,0,330);
-   Graph_Graph3010->SetMinimum(0.2663265);
-   Graph_Graph3010->SetMaximum(0.6485847);
-   Graph_Graph3010->SetDirectory(0);
-   Graph_Graph3010->SetStats(0);
+   TH1F *Graph_Graph_Graph30153020 = new TH1F("Graph_Graph_Graph30153020","",100,0,330);
+   Graph_Graph_Graph30153020->SetMinimum(0.2663265);
+   Graph_Graph_Graph30153020->SetMaximum(0.6485847);
+   Graph_Graph_Graph30153020->SetDirectory(0);
+   Graph_Graph_Graph30153020->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3010->SetLineColor(ci);
-   Graph_Graph3010->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3010->GetXaxis()->SetTitleOffset(1);
-   Graph_Graph3010->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3010->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3010->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3010->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3010->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph3010->GetZaxis()->SetTitleFont(42);
-   grae->SetHistogram(Graph_Graph3010);
+   Graph_Graph_Graph30153020->SetLineColor(ci);
+   Graph_Graph_Graph30153020->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30153020->GetXaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30153020->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30153020->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30153020->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph30153020->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph30153020->GetZaxis()->SetTitleOffset(1);
+   Graph_Graph_Graph30153020->GetZaxis()->SetTitleFont(42);
+   grae->SetHistogram(Graph_Graph_Graph30153020);
    
    grae->Draw("pe ");
       tex = new TLatex(0.11,0.91,"CMS");
@@ -926,26 +932,26 @@ tex->SetNDC();
    tex->SetLineWidth(2);
    tex->Draw();
    
-   TPaveText *pt = new TPaveText(0.59,0.84,0.89,0.88,"brNDC");
+   TPaveText *pt = new TPaveText(0.68,0.83,0.87,0.86,"brNDC");
    pt->SetBorderSize(0);
    pt->SetFillStyle(0);
-   pt->SetTextAlign(32);
+   pt->SetTextAlign(12);
    pt->SetTextSize(0.025);
    TText *pt_LaTex = pt->AddText("#bf{H #rightarrow XX #rightarrow 4b}");
    pt->Draw();
    
-   pt = new TPaveText(0.59,0.8,0.89,0.84,"brNDC");
+   pt = new TPaveText(0.68,0.78,0.87,0.82,"brNDC");
    pt->SetBorderSize(0);
    pt->SetFillStyle(0);
-   pt->SetTextAlign(32);
+   pt->SetTextAlign(12);
    pt->SetTextSize(0.025);
    pt_LaTex = pt->AddText("#bf{m_{H} = 350 GeV}");
    pt->Draw();
    
-   pt = new TPaveText(0.59,0.76,0.89,0.8,"brNDC");
+   pt = new TPaveText(0.68,0.74,0.87,0.78,"brNDC");
    pt->SetBorderSize(0);
    pt->SetFillStyle(0);
-   pt->SetTextAlign(32);
+   pt->SetTextAlign(12);
    pt->SetTextSize(0.025);
    pt_LaTex = pt->AddText("#bf{m_{X} = 80 GeV}");
    pt->Draw();
@@ -971,7 +977,7 @@ tex->SetNDC();
    tex->SetLineWidth(2);
    tex->Draw();
    
-   TLegend *leg = new TLegend(0.11,0.72,0.74,0.88,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.13,0.72,0.74,0.88,NULL,"brNDC");
    leg->SetBorderSize(0);
    leg->SetTextSize(0.024);
    leg->SetLineColor(1);
@@ -979,15 +985,19 @@ tex->SetNDC();
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(0);
-   TLegendEntry *entry=leg->AddEntry("","Displaced-jet triggers using the tracker (c#tau = 0.1m)","lep");
-   entry->SetLineColor(7);
+   TLegendEntry *entry=leg->AddEntry("","Displaced-jet using tracker (c#tau = 0.1m)","lep");
+
+   ci = TColor::GetColor("#33cccc");
+   entry->SetLineColor(ci);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(1);
-   entry->SetMarkerColor(7);
+   entry->SetLineWidth(2);
+
+   ci = TColor::GetColor("#33cccc");
+   entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(33);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(2.2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("","Delayed-jet triggers using ECAL timing (c#tau = 1m)","lep");
+   entry=leg->AddEntry("","Delayed-jet using ECAL timing (c#tau = 1m)","lep");
 
    ci = TColor::GetColor("#ff0000");
    entry->SetLineColor(ci);
@@ -997,9 +1007,9 @@ tex->SetNDC();
    ci = TColor::GetColor("#ff0000");
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(0.8);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("","Displaced-jet triggers using the HCAL (c#tau = 1m)","lep");
+   entry=leg->AddEntry("","Displaced-jet using HCAL (c#tau = 1m)","lep");
 
    ci = TColor::GetColor("#0000ff");
    entry->SetLineColor(ci);
@@ -1009,9 +1019,9 @@ tex->SetNDC();
    ci = TColor::GetColor("#0000ff");
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(0.7);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("","Muon Detector Showers with the DTs (c#tau = 1m)","lep");
+   entry=leg->AddEntry("","Muon Detector Showers with DTs (c#tau = 1m)","lep");
 
    ci = TColor::GetColor("#009900");
    entry->SetLineColor(ci);
@@ -1021,9 +1031,9 @@ tex->SetNDC();
    ci = TColor::GetColor("#009900");
    entry->SetMarkerColor(ci);
    entry->SetMarkerStyle(22);
-   entry->SetMarkerSize(0.8);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("","Muon Detector Showers with the CSCs (c#tau = 1m)","lep");
+   entry=leg->AddEntry("","Muon Detector Showers with CSCs (c#tau = 1m)","lep");
 
    ci = TColor::GetColor("#ff00ff");
    entry->SetLineColor(ci);
@@ -1032,8 +1042,8 @@ tex->SetNDC();
 
    ci = TColor::GetColor("#ff00ff");
    entry->SetMarkerColor(ci);
-   entry->SetMarkerStyle(33);
-   entry->SetMarkerSize(0.8);
+   entry->SetMarkerStyle(23);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    leg->Draw();
    c->Modified();

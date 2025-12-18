@@ -4,7 +4,7 @@
 void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
 {
 //=========Macro generated from canvas: FigExample_800-600_0-prelim-out/FigExample_800-600_0-prelim-out
-//=========  (Mon Nov 24 21:50:34 2025) by ROOT version 6.26/11
+//=========  (Tue Dec 16 23:55:35 2025) by ROOT version 6.26/11
    TCanvas *FigExample_800-600_0-prelim-out = new TCanvas("FigExample_800-600_0-prelim-out", "FigExample_800-600_0-prelim-out",0,0,800,600);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
@@ -61,6 +61,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivInc__1__1->SetLineStyle(0);
    hDivInc__1__1->SetLineWidth(2);
    hDivInc__1__1->SetMarkerStyle(8);
+   hDivInc__1__1->SetMarkerSize(1.5);
    hDivInc__1__1->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1__1->GetXaxis()->SetRange(1,15);
    hDivInc__1__1->GetXaxis()->SetLabelFont(42);
@@ -119,6 +120,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivInc__1__2->SetLineStyle(0);
    hDivInc__1__2->SetLineWidth(2);
    hDivInc__1__2->SetMarkerStyle(8);
+   hDivInc__1__2->SetMarkerSize(1.5);
    hDivInc__1__2->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1__2->GetXaxis()->SetRange(1,15);
    hDivInc__1__2->GetXaxis()->SetLabelFont(42);
@@ -177,6 +179,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivInc__2__3->SetLineStyle(0);
    hDivInc__2__3->SetLineWidth(2);
    hDivInc__2__3->SetMarkerStyle(8);
+   hDivInc__2__3->SetMarkerSize(1.5);
    hDivInc__2__3->GetXaxis()->SetTitle("HT (GeV)");
    hDivInc__2__3->GetXaxis()->SetLabelFont(42);
    hDivInc__2__3->GetXaxis()->SetLabelOffset(0.007);
@@ -235,6 +238,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDiv__3__4->SetLineWidth(2);
    hDiv__3__4->SetMarkerColor(2);
    hDiv__3__4->SetMarkerStyle(21);
+   hDiv__3__4->SetMarkerSize(1.5);
    hDiv__3__4->GetXaxis()->SetRange(1,15);
    hDiv__3__4->GetXaxis()->SetLabelFont(42);
    hDiv__3__4->GetXaxis()->SetLabelOffset(0.007);
@@ -292,6 +296,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDiv__4__5->SetLineWidth(2);
    hDiv__4__5->SetMarkerColor(2);
    hDiv__4__5->SetMarkerStyle(21);
+   hDiv__4__5->SetMarkerSize(1.5);
    hDiv__4__5->GetXaxis()->SetLabelFont(42);
    hDiv__4__5->GetXaxis()->SetLabelOffset(0.007);
    hDiv__4__5->GetXaxis()->SetLabelSize(0.05);
@@ -352,6 +357,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivtau__5__6->SetLineWidth(2);
    hDivtau__5__6->SetMarkerColor(3);
    hDivtau__5__6->SetMarkerStyle(22);
+   hDivtau__5__6->SetMarkerSize(1.5);
    hDivtau__5__6->GetXaxis()->SetRange(1,15);
    hDivtau__5__6->GetXaxis()->SetLabelFont(42);
    hDivtau__5__6->GetXaxis()->SetLabelOffset(0.007);
@@ -413,6 +419,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivtau__6__7->SetLineWidth(2);
    hDivtau__6__7->SetMarkerColor(3);
    hDivtau__6__7->SetMarkerStyle(22);
+   hDivtau__6__7->SetMarkerSize(1.5);
    hDivtau__6__7->GetXaxis()->SetLabelFont(42);
    hDivtau__6__7->GetXaxis()->SetLabelOffset(0.007);
    hDivtau__6__7->GetXaxis()->SetLabelSize(0.05);
@@ -472,6 +479,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivInctau__7__8->SetLineWidth(2);
    hDivInctau__7__8->SetMarkerColor(4);
    hDivInctau__7__8->SetMarkerStyle(23);
+   hDivInctau__7__8->SetMarkerSize(1.5);
    hDivInctau__7__8->GetXaxis()->SetRange(1,15);
    hDivInctau__7__8->GetXaxis()->SetLabelFont(42);
    hDivInctau__7__8->GetXaxis()->SetLabelOffset(0.007);
@@ -532,6 +540,7 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    hDivInctau__8__9->SetLineWidth(2);
    hDivInctau__8__9->SetMarkerColor(4);
    hDivInctau__8__9->SetMarkerStyle(23);
+   hDivInctau__8__9->SetMarkerSize(1.5);
    hDivInctau__8__9->GetXaxis()->SetLabelFont(42);
    hDivInctau__8__9->GetXaxis()->SetLabelOffset(0.007);
    hDivInctau__8__9->GetXaxis()->SetLabelSize(0.05);
@@ -560,14 +569,14 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(0);
-   TLegendEntry *entry=leg->AddEntry("NULL","H_{T}-seeded delayed jet trigger","PLE0");
+   TLegendEntry *entry=leg->AddEntry("NULL","H_{T}-seeded inclusive delayed jet trigger","PLE0");
    entry->SetFillStyle(1001);
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(8);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    entry=leg->AddEntry("NULL","H_{T}-seeded delayed trackless jet trigger","PLE0");
    entry->SetFillStyle(1001);
@@ -576,16 +585,16 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("NULL","Tau-seeded delayed jet trigger","PLE0");
+   entry=leg->AddEntry("NULL","Tau-seeded inclusive delayed jet trigger","PLE0");
    entry->SetFillStyle(1001);
    entry->SetLineColor(4);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(23);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    entry=leg->AddEntry("NULL","Tau-seeded delayed trackless jet trigger","PLE0");
    entry->SetFillStyle(1001);
@@ -594,32 +603,29 @@ void Signal_efficiency_HT430vsL1Tau_HtoXXto4b()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(3);
    entry->SetMarkerStyle(22);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    leg->Draw();
-   TLatex *   tex = new TLatex(80,1.1,"H #rightarrow XX #rightarrow 4b (m_{H} = 1000 GeV, m_{X} = 450 GeV, c#tau = 10m)");
+   TLatex *   tex = new TLatex(50,1.13,"CMS");
+   tex->SetTextAlign(12);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(190,1.13,"Simulation");
+   tex->SetTextAlign(12);
+   tex->SetTextFont(52);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.96,0.97,"(13.6 TeV)");
+tex->SetNDC();
+   tex->SetTextAlign(33);
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.045);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(50,1.03,"H #rightarrow XX #rightarrow 4b (m_{H} = 1000 GeV, m_{X} = 450 GeV, c#tau = 10m)");
    tex->SetTextAlign(12);
    tex->SetTextFont(42);
-   tex->SetTextSize(0.038);
-   tex->SetLineWidth(2);
-   tex->Draw();
-      tex = new TLatex(0.96,0.936,"(13.6 TeV)");
-tex->SetNDC();
-   tex->SetTextAlign(31);
-   tex->SetTextFont(42);
-   tex->SetTextSize(0.048);
-   tex->SetLineWidth(2);
-   tex->Draw();
-      tex = new TLatex(0.12,0.936,"CMS");
-tex->SetNDC();
-   tex->SetTextFont(61);
-   tex->SetTextSize(0.06);
-   tex->SetLineWidth(2);
-   tex->Draw();
-      tex = new TLatex(0.2253,0.936,"Simulation");
-tex->SetNDC();
-   tex->SetTextFont(52);
-   tex->SetTextSize(0.0456);
+   tex->SetTextSize(0.043);
    tex->SetLineWidth(2);
    tex->Draw();
    Double_t xAxis10[17] = {0, 30, 60, 90, 120, 150, 180, 210, 270, 330, 390, 450, 570, 690, 930, 1200, 1500}; 
@@ -659,6 +665,7 @@ tex->SetNDC();
    hDivInc__1_copy__10->SetLineStyle(0);
    hDivInc__1_copy__10->SetLineWidth(2);
    hDivInc__1_copy__10->SetMarkerStyle(8);
+   hDivInc__1_copy__10->SetMarkerSize(1.5);
    hDivInc__1_copy__10->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1_copy__10->GetXaxis()->SetRange(1,15);
    hDivInc__1_copy__10->GetXaxis()->SetLabelFont(42);

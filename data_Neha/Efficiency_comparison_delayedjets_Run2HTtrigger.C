@@ -4,7 +4,7 @@
 void Efficiency_comparison_delayedjets_Run2HTtrigger()
 {
 //=========Macro generated from canvas: FigExample_800-600_0-prelim-out/FigExample_800-600_0-prelim-out
-//=========  (Mon Nov 24 21:14:22 2025) by ROOT version 6.26/11
+//=========  (Tue Dec 16 23:53:21 2025) by ROOT version 6.26/11
    TCanvas *FigExample_800-600_0-prelim-out = new TCanvas("FigExample_800-600_0-prelim-out", "FigExample_800-600_0-prelim-out",0,0,800,600);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
@@ -119,6 +119,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDivInc__1__1->SetLineWidth(2);
    hDivInc__1__1->SetMarkerColor(2);
    hDivInc__1__1->SetMarkerStyle(8);
+   hDivInc__1__1->SetMarkerSize(1.5);
    hDivInc__1__1->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1__1->GetXaxis()->SetLabelFont(42);
    hDivInc__1__1->GetXaxis()->SetLabelOffset(0.007);
@@ -234,6 +235,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDivInc__1__2->SetLineWidth(2);
    hDivInc__1__2->SetMarkerColor(2);
    hDivInc__1__2->SetMarkerStyle(8);
+   hDivInc__1__2->SetMarkerSize(1.5);
    hDivInc__1__2->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1__2->GetXaxis()->SetLabelFont(42);
    hDivInc__1__2->GetXaxis()->SetLabelOffset(0.007);
@@ -349,6 +351,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDivInc__2__3->SetLineWidth(2);
    hDivInc__2__3->SetMarkerColor(2);
    hDivInc__2__3->SetMarkerStyle(21);
+   hDivInc__2__3->SetMarkerSize(1.5);
    hDivInc__2__3->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__2__3->GetXaxis()->SetLabelFont(42);
    hDivInc__2__3->GetXaxis()->SetLabelOffset(0.007);
@@ -463,6 +466,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDiv__3__4->SetLineWidth(2);
    hDiv__3__4->SetMarkerColor(4);
    hDiv__3__4->SetMarkerStyle(22);
+   hDiv__3__4->SetMarkerSize(1.5);
    hDiv__3__4->GetXaxis()->SetLabelFont(42);
    hDiv__3__4->GetXaxis()->SetLabelOffset(0.007);
    hDiv__3__4->GetXaxis()->SetLabelSize(0.05);
@@ -575,6 +579,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDiv__4__5->SetLineWidth(2);
    hDiv__4__5->SetMarkerColor(4);
    hDiv__4__5->SetMarkerStyle(22);
+   hDiv__4__5->SetMarkerSize(1.5);
    hDiv__4__5->GetXaxis()->SetLabelFont(42);
    hDiv__4__5->GetXaxis()->SetLabelOffset(0.007);
    hDiv__4__5->GetXaxis()->SetLabelSize(0.05);
@@ -632,6 +637,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDivBase__5__6->SetLineStyle(0);
    hDivBase__5__6->SetLineWidth(2);
    hDivBase__5__6->SetMarkerStyle(20);
+   hDivBase__5__6->SetMarkerSize(1.5);
    hDivBase__5__6->GetXaxis()->SetLabelFont(42);
    hDivBase__5__6->GetXaxis()->SetLabelOffset(0.007);
    hDivBase__5__6->GetXaxis()->SetLabelSize(0.05);
@@ -689,6 +695,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    hDivBase__6__7->SetLineStyle(0);
    hDivBase__6__7->SetLineWidth(2);
    hDivBase__6__7->SetMarkerStyle(20);
+   hDivBase__6__7->SetMarkerSize(1.5);
    hDivBase__6__7->GetXaxis()->SetLabelFont(42);
    hDivBase__6__7->GetXaxis()->SetLabelOffset(0.007);
    hDivBase__6__7->GetXaxis()->SetLabelSize(0.05);
@@ -717,14 +724,14 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(0);
-   TLegendEntry *entry=leg->AddEntry("NULL","Delayed jet trigger with H_{T} > 430 GeV and jet timing > 1 ns","PL E0");
+   TLegendEntry *entry=leg->AddEntry("NULL","Inclusive delayed jet trigger with H_{T} > 430 GeV and jet timing > 1 ns","PL E0");
    entry->SetFillStyle(1001);
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    entry=leg->AddEntry("NULL","Trackless delayed jet trigger with H_{T} > 430 GeV and jet timing > 1 ns","PL E0");
    entry->SetFillStyle(1001);
@@ -733,7 +740,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(22);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    entry=leg->AddEntry("NULL","H_{T} > 1050 GeV trigger","PL E0");
    entry->SetFillStyle(1001);
@@ -742,7 +749,7 @@ void Efficiency_comparison_delayedjets_Run2HTtrigger()
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(8);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(80,1.4,"H #rightarrow X X #rightarrow 4b  (m_{H} = 1000 GeV,  m_{X} = 450 GeV,  c#tau = 10 m)");
@@ -865,6 +872,7 @@ tex->SetNDC();
    hDivInc__1_copy__8->SetLineWidth(2);
    hDivInc__1_copy__8->SetMarkerColor(2);
    hDivInc__1_copy__8->SetMarkerStyle(8);
+   hDivInc__1_copy__8->SetMarkerSize(1.5);
    hDivInc__1_copy__8->GetXaxis()->SetTitle("H_{T} [GeV]");
    hDivInc__1_copy__8->GetXaxis()->SetLabelFont(42);
    hDivInc__1_copy__8->GetXaxis()->SetLabelOffset(0.007);
